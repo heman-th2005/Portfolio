@@ -1,0 +1,116 @@
+.contact {
+    background: var(--bg);
+    padding-bottom: 0;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* soft glow behind the card */
+.contact::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 40%;
+    width: 640px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(closest-side, rgba(56, 189, 248, 0.16), transparent);
+    filter: blur(30px);
+}
+
+.contact-container {
+    max-width: 760px;
+}
+
+.contact-card {
+    padding: 52px 40px;
+    text-align: center;
+    background:
+        linear-gradient(180deg, var(--surface-2) 0%, var(--surface) 100%) padding-box,
+        linear-gradient(135deg, rgba(56, 189, 248, 0.6), rgba(129, 140, 248, 0.15) 50%, rgba(56, 189, 248, 0.4)) border-box;
+    border: 1px solid transparent;
+}
+
+.contact-card:hover {
+    transform: none;
+}
+
+.contact-card h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.contact-card > p {
+    color: var(--text-muted);
+    max-width: 460px;
+    margin: 0 auto 28px;
+}
+
+.contact-details {
+    margin-bottom: 30px;
+}
+
+.contact-details p {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(11, 17, 32, 0.6);
+    font-size: 15px;
+}
+
+.contact-details span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.contact-details span svg {
+    width: 17px;
+    height: 17px;
+}
+
+.contact-details a {
+    color: var(--text);
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.25s;
+}
+
+.contact-details a:hover {
+    color: var(--accent);
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.contact-footer {
+    margin: 90px -6% 0;
+    padding: 28px 6%;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 13.5px;
+}
+
+@media (max-width: 600px) {
+    .contact-card {
+        padding: 38px 22px;
+    }
+
+    .contact-links .btn {
+        flex: 1 1 100%;
+    }
+}

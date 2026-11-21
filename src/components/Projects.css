@@ -1,0 +1,111 @@
+.projects {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* Third project spans the full row so the grid stays balanced */
+.project-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+}
+
+.project-card {
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* top gradient line revealed on hover */
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease);
+}
+
+.project-card:hover::before {
+    transform: scaleX(1);
+}
+
+.project-index {
+    position: absolute;
+    top: 22px;
+    right: 28px;
+    font-family: var(--mono);
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 1;
+    color: rgba(148, 163, 184, 0.12);
+    transition: color 0.3s;
+}
+
+.project-card:hover .project-index {
+    color: rgba(56, 189, 248, 0.3);
+}
+
+.project-category {
+    align-self: flex-start;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+}
+
+.project-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+}
+
+.project-description {
+    color: var(--text-muted);
+    line-height: 1.75;
+    font-size: 15.5px;
+    margin-bottom: 26px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.project-tech span {
+    background: rgba(11, 17, 32, 0.7);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-family: var(--mono);
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 26px;
+    }
+}

@@ -1,0 +1,93 @@
+.about {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-content .section-head {
+    margin-bottom: 28px;
+}
+
+.about-content > p {
+    color: var(--text-muted);
+    font-size: 16.5px;
+    line-height: 1.85;
+    margin-bottom: 18px;
+}
+
+.about-details {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.detail-card {
+    padding: 26px 28px;
+    overflow: hidden;
+}
+
+/* accent bar on the left edge */
+.detail-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 22px;
+    bottom: 22px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: var(--gradient);
+}
+
+.detail-card h3 {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.detail-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.detail-card h4.big-number {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    width: fit-content;
+}
+
+.detail-card p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.detail-card span {
+    display: inline-block;
+    color: var(--text-dim);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+@media (max-width: 860px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
